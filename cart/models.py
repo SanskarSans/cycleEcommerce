@@ -25,7 +25,7 @@ class CartManager(models.Manager):
     def new(self, user=None):
         user_object = None
         if user is not None:
-            if user.is_autenticated():
+            if user.is_authenticated:
                 user_object = user
         return self.model.objects.create(user=user_object)
 
